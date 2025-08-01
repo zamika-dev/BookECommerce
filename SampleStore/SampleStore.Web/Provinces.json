@@ -1,0 +1,126 @@
+[
+  {
+    "Id": "DA314798-ED14-4DCF-BCF1-B5CBED99B448",
+    "ProvinceName": "آذربایجان شرقی"
+  },
+  {
+    "Id": "BD562450-2EFB-4F7D-A9CD-69F9F067E354",
+    "ProvinceName": "آذربایجان غربی"
+  },
+  {
+    "Id": "D4F0FC62-9525-4A7D-9346-6474DDB77F81",
+    "ProvinceName": "اردبیل"
+  },
+  {
+    "Id": "6341F29D-4257-4123-9600-804747A46013",
+    "ProvinceName": "اصفهان"
+  },
+  {
+    "Id": "DDEBB38B-F674-4091-A851-B76FC7FCBAC7",
+    "ProvinceName": "البرز"
+  },
+  {
+    "Id": "dd1d3b26-2b7f-4413-93b4-b77fe0748a0a",
+    "ProvinceName": "ایلام"
+  },
+  {
+    "Id": "cff49c8d-547a-47fe-af95-1bd0919619cd",
+    "ProvinceName": "بوشهر"
+  },
+  {
+    "Id": "fed5cade-3d06-47ea-915e-a37fce2f89ff",
+    "ProvinceName": "تهران"
+  },
+  {
+    "Id": "ccfd7b22-07de-481c-b276-9a3ed302821e",
+    "ProvinceName": "چهارمحال و بختیاری"
+  },
+  {
+    "Id": "d42125b1-3986-4785-9b04-b8213f0ddd85",
+    "ProvinceName": "خراسان جنوبی"
+  },
+  {
+    "Id": "d6a54798-e29c-4566-891a-056e402192a8",
+    "ProvinceName": "خراسان رضوی"
+  },
+  {
+    "Id": "78d9f126-979f-4613-a96d-01e0d33dfee3",
+    "ProvinceName": "خراسان شمالی"
+  },
+  {
+    "Id": "9e9d2065-43e3-46bd-afba-3aa380a85cdb",
+    "ProvinceName": "خوزستان"
+  },
+  {
+    "Id": "84b46230-3ba2-4e0f-b92d-ac18b527b8a6",
+    "ProvinceName": "زنجان"
+  },
+  {
+    "Id": "3cec9d28-80fc-49cd-a611-bbad16f3972c",
+    "ProvinceName": "سمنان"
+  },
+  {
+    "Id": "ae3dc98f-f6d2-4ff5-befa-446664595702",
+    "ProvinceName": "سیستان و بلوچستان"
+  },
+  {
+    "Id": "2c513843-1a07-4c4d-8044-be58525823a7",
+    "ProvinceName": "فارس"
+  },
+  {
+    "Id": "d6ad0016-816b-44e5-8f81-51b8f3f78537",
+    "ProvinceName": "قزوین"
+  },
+  {
+    "Id": "bbae735f-69a0-4dfd-944f-bb76ab744103",
+    "ProvinceName": "قم"
+  },
+  {
+    "Id": "fce7c129-a376-44f2-ae1d-b31068f52348",
+    "ProvinceName": "کردستان"
+  },
+  {
+    "Id": "9106a46c-cfa1-45f9-bfed-4954ad369518",
+    "ProvinceName": "کرمان"
+  },
+  {
+    "Id": "c6dcaf58-da0b-401f-a284-c0bd21a3f317",
+    "ProvinceName": "کرمانشاه"
+  },
+  {
+    "Id": "b4427192-a119-4ef6-b66b-4b802020a572",
+    "ProvinceName": "کهگیلویه و بویراحمد"
+  },
+  {
+    "Id": "d2ea55b7-452c-472e-b7c8-7b16cba758f2",
+    "ProvinceName": "گلستان"
+  },
+  {
+    "Id": "f19764ee-925c-47fa-8fd6-387ff17952aa",
+    "ProvinceName": "گیلان"
+  },
+  {
+    "Id": "e7d96627-f01d-47e0-b667-9bb0999e1eed",
+    "ProvinceName": "لرستان"
+  },
+  {
+    "Id": "e4598fdf-270f-4139-a418-43d529a35b83",
+    "ProvinceName": "مازندران"
+  },
+  {
+    "Id": "d286fedf-a647-4e01-b19f-e990be895cff",
+    "ProvinceName": "مرکزی"
+  },
+  {
+    "Id": "49e5ecd9-335e-43d4-86ee-45d74a57412a",
+    "ProvinceName": "هرمزگان"
+  },
+  {
+    "Id": "a4a522af-0cbc-46c0-8fd1-54dfe3439640",
+    "ProvinceName": "همدان"
+  },
+  {
+    "Id": "89a7af45-e239-4408-984e-ce64c1073963",
+    "ProvinceName": "یزد"
+  }
+]

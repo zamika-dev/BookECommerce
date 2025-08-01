@@ -1,0 +1,82 @@
+[
+  {
+    "Id": "73f242f6-6d3f-4627-9faf-d953306c7047",
+    "CountryName": "بریتانیا"
+  },
+  {
+    "Id": "44c6fcaf-45dd-482a-9cb9-67d0fe10f879",
+    "CountryName": "روسیه"
+  },
+  {
+    "Id": "d22f7c41-90b1-4bca-9d73-0b34443b88e8",
+    "CountryName": "آمریکا"
+  },
+  {
+    "Id": "c9b9a288-9bef-4af3-9e1d-4e5b5910c624",
+    "CountryName": "فرانسه"
+  },
+  {
+    "Id": "4b998595-4b0d-4174-a1e8-094a5b07ccf2",
+    "CountryName": "آلمان"
+  },
+  {
+    "Id": "43169c29-a4f7-4d20-8e5a-eba0f5cab4cd",
+    "CountryName": "ایتالیا"
+  },
+  {
+    "Id": "397d6a56-a680-492b-9944-768ec09450f3",
+    "CountryName": "اسپانیا"
+  },
+  {
+    "Id": "fb2c1707-4e8e-403c-b42f-c546d2b0ea81",
+    "CountryName": "چین"
+  },
+  {
+    "Id": "1f4b8250-0363-45b9-b796-3f181f438752",
+    "CountryName": "ژاپن"
+  },
+  {
+    "Id": "365908df-7a1f-45df-9a4a-1b741841c975",
+    "CountryName": "هند"
+  },
+  {
+    "Id": "1ccab492-8384-4dfe-a4e5-985c6ff1c0c2",
+    "CountryName": "برزیل"
+  },
+  {
+    "Id": "bf0dd6c3-d152-469f-b65a-a1517555ef8d",
+    "CountryName": "کانادا"
+  },
+  {
+    "Id": "2643f2bf-d214-4f3c-a9ae-45ccca259704",
+    "CountryName": "استرالیا"
+  },
+  {
+    "Id": "7c36d192-c3c6-443f-8d79-5440472637e1",
+    "CountryName": "مکزیک"
+  },
+  {
+    "Id": "b4a5f671-15e2-4b4a-ae5d-d2f41b173ef3",
+    "CountryName": "کره جنوبی"
+  },
+  {
+    "Id": "ed4937fa-d6da-4fc6-9266-16656f42f551",
+    "CountryName": "ترکیه"
+  },
+  {
+    "Id": "afbbc95f-be11-4099-bbc1-182518004bee",
+    "CountryName": "ایران"
+  },
+  {
+    "Id": "794cbc58-4d83-4875-9801-7a5b305c459a",
+    "CountryName": "مصر"
+  },
+  {
+    "Id": "f7d69a0d-f64f-492c-99f1-a3bbd02e5d2b",
+    "CountryName": "آفریقای جنوبی"
+  },
+  {
+    "Id": "449b5c41-b0f7-4cf8-af67-1098799400d7",
+    "CountryName": "آرژانتین"
+  }
+]

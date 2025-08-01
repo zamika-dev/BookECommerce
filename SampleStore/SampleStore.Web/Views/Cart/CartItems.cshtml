@@ -1,0 +1,99 @@
+﻿@using SampleStore.Web.Models.Cart
+@model ShoppingCartDetailsViewModel
+@{
+    ViewBag.Title = "سبد خرید";
+}
+
+<div class="container py-4">
+    <div class="row">
+        <!-- جزئیات قیمت - سمت چپ بالا -->
+        <div class="col-lg-4 order-lg-2 mb-4">
+            <div class="bg-white p-4 rounded rounded-4 border border-1">
+                <h5 class="mb-4 fw-bold text-center">جزئیات قیمت</h5>
+
+                <div class="d-flex justify-content-between mb-2">
+                    <span>قیمت محصولات:</span>
+                    <span>@Model.OrderTotal تومان</span>
+                </div>
+
+                <div class="d-flex justify-content-between mb-2">
+                    <span>تخفیف محصولات:</span>
+                    <span>@Model.Discount تومان</span>
+                </div>
+
+                <hr>
+
+                <div class="d-flex justify-content-between mb-2">
+                    <span>هزینه ارسال:</span>
+                    <span>@Model.PostPrice تومان</span>
+                </div>
+
+                <hr>
+
+                <div class="d-flex justify-content-between fw-bold mb-3">
+                    <span>مبلغ قابل پرداخت:</span>
+                    <span>@Model.TotalPrice تومان</span>
+                </div>
+
+                <a asp-action="CheckoutAddress" asp-controller="Cart" class="btn btn-danger w-100 fw-bold">تأیید و ادامه</a>
+            </div>
+        </div>
+
+        <!-- محصولات - سمت راست -->
+        <div class="col-lg-8 order-lg-1">
+            @foreach (var item in Model.shoppingCartItems)
+            {
+                var finalPrice = (item.Book.Price * item.Count) - (item.Book.Discount * item.Count);
+
+                <div class="bg-white p-4 rounded rounded-4 border border-1 mb-3">
+                    <div class="row align-items-center">
+                        <!-- تصویر محصول -->
+                        <div class="col-md-3 text-center mb-3 mb-md-0">
+                            <a asp-controller="Books" asp-action="BookDetails" asp-route-Id="@item.Book.Id">
+                                <img src="~/images/Books/@item.Book.ImagePath" class="img-fluid rounded" style="max-width: 100px;" alt="@item.Book.BookName">
+                            </a>
+                        </div>
+
+                        <!-- جزئیات محصول -->
+                        <div class="col-md-9">
+                            <div class="d-flex justify-content-between flex-wrap">
+                                <div>
+                                    <h6 class="fw-bold mb-1">@item.Book.BookName</h6>
+                                    <small class="text-muted d-block mb-2">آماده ارسال از ۳ روز دیگر</small>
+                                </div>
+                            </div>
+
+                            <!-- قیمت -->
+                            <div class="d-flex gap-3 align-items-center">
+                                @if (item.Book.Discount > 0)
+                                {
+                                    <span class="text-danger fs-6">@(item.Book.Discount * item.Count) تومان تخفیف</span>
+                                    <span class="fw-bold fs-5">@finalPrice تومان</span>
+                                }
+                                else
+                                {
+                                    <span class="fw-bold">@(item.Book.Price * item.Count) تومان</span>
+                                }
+                            </div>
+
+                            <!-- کنترل تعداد -->
+                            <div class="mt-3 d-flex align-items-center gap-2">
+                                <a class="btn btn-outline-secondary btn-sm" asp-action="UpdateCountByCartId" asp-route-cartId="@item.Id" asp-route-delta="+1">+</a>
+                                <input type="text" asp-for="@item.Count" class="form-control form-control-sm text-center" style="width: 50px;">
+                                @if(item.Count > 1)
+                                {
+                                    <a class="btn btn-outline-secondary btn-sm" asp-action="UpdateCountByCartId" asp-route-cartId="@item.Id" asp-route-delta="-1">−</a>
+                                }
+                                else
+                                {
+                                    <a class="btn btn-outline-secondary btn-sm" asp-action="UpdateCountByCartId" asp-route-cartId="@item.Id" asp-route-delta="-1"><i class="bi bi-trash3"></i></a>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+
+    </div>
+</div>

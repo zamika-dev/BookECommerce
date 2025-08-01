@@ -1,0 +1,171 @@
+﻿@using SampleStore.Services.Books
+@model List<BooksSummaryDto>
+
+@{
+    ViewData["Title"] = "لیست کتاب‌ها";
+}
+
+<div class="container-fluid py-4">
+    <div class="row">
+        <!-- سایدبار فیلتر -->
+        <div class="col-md-3">
+            <div class="card shadow-sm sticky-top" style="top: 20px;">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0">فیلتر کتاب‌ها</h5>
+                </div>
+                <div class="card-body">
+                    <form id="filterForm">
+                        <!-- جستجو -->
+                        <div class="mb-3">
+                            <label for="searchInput" class="form-label">جستجوی کتاب</label>
+                            <input type="text" class="form-control" id="searchInput" placeholder="عنوان کتاب یا نویسنده...">
+                        </div>
+
+                        <!-- دسته‌بندی‌ها -->
+                        <div class="mb-3">
+                            <label class="form-label">دسته‌بندی</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="category1" checked>
+                                <label class="form-check-label" for="category1">رمان</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="category2" checked>
+                                <label class="form-check-label" for="category2">تاریخی</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="category3" checked>
+                                <label class="form-check-label" for="category3">علمی</label>
+                            </div>
+                        </div>
+
+                        <!-- محدوده قیمت -->
+                        <div class="mb-3">
+                            <label class="form-label">محدوده قیمت</label>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span id="priceMinValue">0</span>
+                                <span id="priceMaxValue">500,000</span>
+                            </div>
+                            <div id="priceRangeSlider"></div>
+                        </div>
+
+                        <!-- وضعیت موجودی -->
+                        <div class="mb-3">
+                            <label class="form-label">وضعیت موجودی</label>
+                            <select class="form-select" id="stockStatus">
+                                <option value="all" selected>همه</option>
+                                <option value="in-stock">موجود</option>
+                                <option value="out-of-stock">ناموجود</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100">اعمال فیلترها</button>
+                        <button type="reset" class="btn btn-outline-secondary w-100 mt-2">پاک کردن فیلترها</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- محتوای اصلی - لیست کتاب‌ها -->
+        <div class="col-md-9">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2 class="mb-0">لیست کتاب‌ها</h2>
+                <div class="d-flex">
+                    <div class="dropdown me-2">
+                        <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="sortDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                            مرتب‌سازی: جدیدترین
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="sortDropdown">
+                            <li><a class="dropdown-item" href="#">جدیدترین</a></li>
+                            <li><a class="dropdown-item" href="#">قدیمی‌ترین</a></li>
+                            <li><a class="dropdown-item" href="#">ارزان‌ترین</a></li>
+                            <li><a class="dropdown-item" href="#">گران‌ترین</a></li>
+                            <li><a class="dropdown-item" href="#">پربازدیدترین</a></li>
+                        </ul>
+                    </div>
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-outline-secondary active" data-view="grid"><i class="bi bi-grid-fill"></i></button>
+                        <button type="button" class="btn btn-outline-secondary" data-view="list"><i class="bi bi-list-ul"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- لیست کتاب‌ها به صورت گرید -->
+            <div class="row" id="booksGrid">
+                @foreach(var book in Model)
+                {
+                    <!-- کتاب 1 -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card h-100 border-0  hover-shadow">
+                            <div class="position-relative">
+                                <a asp-action="BookDetails" asp-controller="Books" asp-route-Id="@book.Id">
+                                    <img src="~/images/Books/@book.ImagePath" class="card-img-top" alt="عنوان کتاب">
+                                </a>
+                                <span class="position-absolute top-0 start-0 bg-success text-white px-2 py-1 small">موجود</span>
+                                <span class="position-absolute top-0 end-0 bg-danger text-white px-2 py-1 small">15% تخفیف</span>
+                            </div>
+                            <div class="card-body">
+                                <a asp-action="BookDetails" asp-controller="Books" asp-route-Id="@book.Id" class="text-dark text-decoration-none">
+                                    <h5 class="card-title" >@book.BookName</h5>
+                                </a>
+                                <p class="card-text text-muted small">نویسنده: @book.WriterFullName</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <span class="text-danger text-decoration-line-through me-2">@((book.Price - 100).ToString("N0")) تومان</span>
+                                        <span class="fw-bold">@book.Price تومان</span>
+                                    </div>
+                                    <span class="badge bg-primary">@book.CategoryName</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+
+            <!-- پagination -->
+            <nav aria-label="Page navigation">
+                <ul class="pagination justify-content-center mt-4">
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">قبلی</a>
+                    </li>
+                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">بعدی</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        // اسکریپت‌های مربوط به فیلترها و نمایش کتاب‌ها
+        $(document).ready(function() {
+            // تغییر حالت نمایش بین گرید و لیست
+            $('[data-view]').click(function() {
+                $('[data-view]').removeClass('active');
+                $(this).addClass('active');
+
+                if ($(this).data('view') === 'list') {
+                    $('#booksGrid').addClass('list-view');
+                } else {
+                    $('#booksGrid').removeClass('list-view');
+                }
+            });
+
+            // رنج قیمت
+            $("#priceRangeSlider").slider({
+                range: true,
+                min: 0,
+                max: 500000,
+                values: [0, 500000],
+                slide: function(event, ui) {
+                    $("#priceMinValue").text(ui.values[0].toLocaleString());
+                    $("#priceMaxValue").text(ui.values[1].toLocaleString());
+                }
+            });
+        });
+    </script>
+}

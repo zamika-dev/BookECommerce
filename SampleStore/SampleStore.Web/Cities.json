@@ -1,0 +1,47 @@
+[
+  {
+    "Id": "1a1f64db-fb20-4949-9b45-e83a2b0a80d1",
+    "CityName": "تبریز",
+    "ProvinceId": "DA314798-ED14-4DCF-BCF1-B5CBED99B448"
+  },
+  {
+    "Id": "6d469baa-bd59-4bd3-83f7-6d9d19fad7e0",
+    "CityName": "مراغه",
+    "ProvinceId": "da314798-ed14-4dcf-bcf1-b5cbed99b448"
+  },
+  {
+    "Id": "95105922-71a9-4a3e-b758-3582d0409f3b",
+    "CityName": "ارومیه",
+    "ProvinceId": "bd562450-2efb-4f7d-a9cd-69f9f067e354"
+  },
+  {
+    "Id": "27296f29-ff9c-43d7-8b5d-223c5123bddd",
+    "CityName": "خوی",
+    "ProvinceId": "bd562450-2efb-4f7d-a9cd-69f9f067e354"
+  },
+  {
+    "Id": "a8ddd736-09fd-490f-9dd3-d9b1b48aa0a2",
+    "CityName": "اردبیل",
+    "ProvinceId": "d4f0fc62-9525-4a7d-9346-6474ddb77f81"
+  },
+  {
+    "Id": "f30cc42f-ba13-43c9-a5ab-2d384ce4d805",
+    "CityName": "مشگین‌شهر",
+    "ProvinceId": "d4f0fc62-9525-4a7d-9346-6474ddb77f81"
+  },
+  {
+    "Id": "2fe54e24-41cf-4473-b23d-1889b779084a",
+    "CityName": "اصفهان",
+    "ProvinceId": "6341f29d-4257-4123-9600-804747a46013"
+  },
+  {
+    "Id": "4113fdeb-0cb6-4d7e-8b66-1225b1cbf65d",
+    "CityName": "کاشان",
+    "ProvinceId": "6341f29d-4257-4123-9600-804747a46013"
+  },
+  {
+    "Id": "38663209-9e46-4ac5-9865-513a6a551d3d",
+    "CityName": "کرج",
+    "ProvinceId": "ddebb38b-f674-4091-a851-b76fc7fcbac7"
+  }
+]

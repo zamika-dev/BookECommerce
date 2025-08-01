@@ -1,0 +1,75 @@
+﻿@using SampleStore.Web.Models
+@model RegisterRequestModel;
+@{
+    Layout = null;
+    ViewBag.Title = "ثبت نام";
+}
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+
+    <!-- Bootstrap RTL از CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css"
+          integrity="sha384-PJsj/BTMqILvmcej7ulplguok8ag4xFTPryRq8xevL7eBYSmpXKcbNVuy+P0RMgq"
+          crossorigin="anonymous">
+
+    <!-- Bootstrap Icons از CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+
+    <!-- فایل‌های CSS محلی -->
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/BookStore.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-6 col-lg-4">
+            <div class="card ">
+                <div class="card-header d-flex justify-content-center" style="background-color: antiquewhite">
+                    <img src="~/images/logo2.png" alt="Logo" height="100" />
+                </div>
+
+                <div class="card-body login-body">
+                    <p class="text-50 fw-bold mb-3">ثبت نام</p>
+                    <form asp-action="Register" asp-controller="Account" method="post">
+                        <div class="mb-3">
+                            <label for="email" class="form-label">ایمیل</label>
+                            <div class="input-group">
+                                <span asp-for="Email" class="input-group-text"><i class="fas fa-envelope"></i></span>
+                                <input asp-for="Email" class="form-control" placeholder="example@domain.com">
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">رمز عبور</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                                <input asp-for="Password" type="password" class="form-control" placeholder="رمز عبور خود را وارد کنید">
+                                <span asp-validation-for="Password" class="text-danger"></span>
+                            </div>
+                            <div asp-validation-summary="All" class="text-danger"></div>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="remember">
+                                <label class="form-check-label" for="remember">مرا به خاطر بسپار</label>
+                            </div>
+                            <a href="#" class="forgot-pass" style="text-decoration:none">رمز عبور را فراموش کرده اید؟</a>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-login w-100 d-block mx-auto" style="background-color: coral">ثبت نام</button>
+                    </form>
+
+                    <div class="text-center mt-4">
+                        <p class="mb-0">قبلا ثبت نام کرده اید؟ <a asp-action="Login" class="text-primary" style="text-decoration:none">وارد شوید</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+</body>
+</html>
